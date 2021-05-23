@@ -1,1 +1,2 @@
-"github is awesome" 
+Git is good
+Github is awesome！
