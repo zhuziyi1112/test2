@@ -1,0 +1,3 @@
+docker run -it -v/windows/system32/zhuziyi/:/zhu_ziyi nycdsa/linux-toolkits bash
+
+docker run -it -v/windows/system32/zhuziyi/:/zhuziyi -p 8889:8888 nycdsa/linux-toolkits bash

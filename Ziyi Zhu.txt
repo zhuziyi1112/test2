@@ -1,0 +1,90 @@
+### Question #1: 
+#1. Create a directory named `test` and make `test` a git repository.
+
+mkdir -p ~/test
+cd test
+git init
+
+#2. Create a file named `a.txt` with the content “Git is good” under test and add `a.txt` to the staging area.
+
+echo "Git is good" > a.txt
+git add a.txt
+
+#3. Run the command `git status` and check the output.
+
+git status 
+
+#4. Now commit your changes and check the output of `git status`.
+
+git commit -m "add a txt"
+git status
+
+
+### Question #2:
+
+1. Create a new directory named `subtest` under `test` repo and add a file `b.txt` into it, the content can be anything.
+
+mkdir -p ~/test/subtest
+
+cd subtest
+
+echo "anything"> b.txt
+
+2. Add some more files, for example `a1.txt`, `a2.txt`, to test repo and then add all of them to the staging area.
+
+echo "anything"> a1.txt
+echo "anything"> a2.txt
+git add .
+
+3. Run `git status` to make sure you have everything in the staging area and then commit them.
+
+git status
+
+4. Display all the commits we’ve done so far.
+
+git commit -m "commit all"
+git status
+
+### Question #3:
+1. Create a new repository with the name `test` under your Github account and follow the instruction on Github to link the remote repository with the local one you just created in question 1. This [instruction link](https://help.github.com/articles/adding-a-remote/) might be useful.
+
+
+git clone https://github.com/zhuziyi1112/test2.git
+
+git remote -v
+
+2. Add a new line “Github is awesome” to the file `a.txt` under the local repo `test` and then add the change to the staging area.
+
+echo "github is awesome" > a.txt
+git status
+git add a.txt
+
+3. Now `a.txt` has two versions. Use `git diff` to show the difference between the old version that we just committed and the new one in the staging area.
+
+git diff
+
+4. Commit the changes and push it to the remote repo.
+
+git commit -m "awesome github"
+git remote add test https://github.com/zhuziyi1112/test.git
+git push
+
+
+### Question #4:
+1. Read [this tutorial](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting) and finish the following questions using the right commands.
+
+
+2. Edit `a1.txt` and add it to the staging area and then try to undo the changes.
+
+git add a1.txt
+git status
+git reset
+git status
+
+3. Edit the file `a1.txt` and commit it to the repository and then try to undo the changes you just committed.
+
+git add a1.txt
+git status
+git commit -m "commit a1"
+git log
+git reset 8c7d696d8
